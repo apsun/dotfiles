@@ -21,8 +21,8 @@ c() { cd "$@" && ls; }
 complete -F _cd c
 alias fd='c ..'
 
-# Update aliases
+# pacman aliases
 alias pac-up='sudo pacman -Syu'
-alias aur-up='pacaur -Syua'
+alias aur-up='yay -Syua'
 alias pac-autorm='sudo pacman -Rsn $(pacman -Qdtq)'
-
+alias pac-cacherm='sudo paccache -r; sudo paccache -urk0'
