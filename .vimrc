@@ -12,8 +12,12 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:→\ ,space:·
 
-" Display line numbers
+" Hybrid line numbers
 set number
+set relativenumber
+
+" Fix escape delay
+set timeoutlen=1000 ttimeoutlen=0
 
 " Disable matching brace jumping
 set noshowmatch
@@ -52,6 +56,16 @@ syntax enable
 set background=dark
 colorscheme gruvbox
 
+" Status line
+set laststatus=2
+set statusline=
+set statusline+=%F
+set statusline+=%M
+set statusline+=%=
+set statusline+=line\ %l
+set statusline+=,\ 
+set statusline+=col\ %c
+
 " GUI options
 if has("gui_running")
     " Disable I-beam cursor
@@ -66,3 +80,7 @@ if has("gui_running")
     " Force GUI window size
     set lines=25 columns=80
 endif
+
+" xclip mappings
+vmap "+y :!xclip -f -sel clip<CR>
+map "+p :r!xclip -o -sel clip<CR>

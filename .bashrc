@@ -12,6 +12,11 @@ PS1='[\u@\h:\w]\n\$ '
 HISTFILESIZE=
 HISTSIZE=
 
+# Immediately write history
+shopt -s histappend
+HISTCONTROL=ignoredups
+PROMPT_COMMAND="history -a"
+
 # ls aliases
 alias ls='ls --color=auto'
 alias l='ls -alF'
