@@ -2,19 +2,19 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Indent with spaces, smart tab
+set expandtab
 set shiftwidth=4
 set softtabstop=4
-set expandtab
 set autoindent
 set backspace=indent,eol,start
 
 " Dot for space, arrow for tab
 set list
-set listchars=tab:→\ ,space:·
+set listchars=tab:>\ ,space:.
 
 " Hybrid line numbers
 set number
-set relativenumber
+" set relativenumber
 
 " Fix escape delay
 set timeoutlen=1000 ttimeoutlen=0
@@ -43,6 +43,10 @@ set clipboard=unnamedplus
 filetype on
 filetype plugin on
 filetype indent on
+
+" Hard tabs on Makefiles and Go code
+autocmd FileType make set noexpandtab shiftwidth=4 tabstop=4
+autocmd FileType go set noexpandtab shiftwidth=4 tabstop=4
  
 " Color scheme
 if has("termguicolors")

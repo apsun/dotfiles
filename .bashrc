@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -17,9 +13,14 @@ shopt -s histappend
 HISTCONTROL=ignoredups
 PROMPT_COMMAND="history -a"
 
+# Recursive glob
+shopt -s globstar
+
 # ls aliases
 alias ls='ls --color=auto'
-alias l='ls -alF'
+alias l='ls'
+alias sl='ls'
+alias s='ls'
 
 # cd aliases
 c() { cd "$@" && ls; }
@@ -31,3 +32,8 @@ alias pac-up='sudo pacman -Syu'
 alias aur-up='yay -Syua'
 alias pac-autorm='sudo pacman -Rsn $(pacman -Qdtq)'
 alias pac-cacherm='sudo paccache -r; sudo paccache -urk0'
+
+# ssh + tmux
+ssht() {
+  ssh -t "$@" 'tmux new -As0'
+}
