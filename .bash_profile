@@ -16,6 +16,8 @@ export GTK_OVERLAY_SCROLLING=0
 
 # bin paths
 PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.cargo/bin
+PATH=$PATH:$HOME/go/bin
 export PATH
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
