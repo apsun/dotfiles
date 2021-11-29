@@ -1,11 +1,3 @@
-[user]
-	email = andrew@crossbowffs.com
-	name = Andrew Sun
-	signingkey = 00C43215497E7D6C
-
-[commit]
-	gpgSign = true
-
 [core]
 	autocrlf = input
 	eol = lf
