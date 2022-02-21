@@ -26,7 +26,7 @@ alias sl='ls'
 alias s='ls'
 
 # cd aliases
-alias fd='c ..'
+alias fd='cd ..'
 
 # pacman aliases
 alias pac-up='sudo pacman -Syu'
