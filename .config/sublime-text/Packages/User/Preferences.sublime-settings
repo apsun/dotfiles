@@ -1,8 +1,0 @@
-{
-	"font_size": 10,
-	"ensure_newline_at_eof_on_save": true,
-	"shift_tab_unindent": true,
-	"vintage_use_clipboard": true,
-	"vintage_ctrl_keys": true,
-	"update_check": false,
-}
