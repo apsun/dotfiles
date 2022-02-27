@@ -12,7 +12,10 @@ export GTK_OVERLAY_SCROLLING=0
 # Don't generate __pycache__
 export PYTHONDONTWRITEBYTECODE=1
 
-# Hidden dir for gopath
+# Hidden dir for Android SDK
+export ANDROID_SDK_ROOT=$HOME/.android/sdk
+
+# Hidden dir for Go workspace
 export GOPATH=$HOME/.go
 
 # bin paths
