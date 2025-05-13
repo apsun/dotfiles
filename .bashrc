@@ -4,6 +4,10 @@
 # Bash prompt
 PS1='[\u@\h:\w]\n\$ '
 
+# Different file for history so that failing to source this
+# file doesn't clobber the full history
+HISTFILE=~/.bash_history_real
+
 # Infinite Bash history
 HISTFILESIZE=
 HISTSIZE=
@@ -19,24 +23,5 @@ HISTTIMEFORMAT="%F %T "
 # Recursive glob
 shopt -s globstar
 
-# ls aliases
-alias ls='ls --color=auto'
-alias l='ls -alF'
-alias sl='ls'
-alias s='ls'
-
-# cd aliases
-alias fd='cd ..'
-
-# pacman aliases
-alias pac-up='sudo pacman -Syu'
-alias aur-up='yay -Syua'
-alias pac-autorm='sudo pacman -Rsn $(pacman -Qdttq)'
-alias pac-cacherm='sudo paccache -r; sudo paccache -urk0'
-
-# Wireguard
-alias wgu='wg-quick up wg0'
-alias wgd='wg-quick down wg0'
-
-# ssh + tmux
-ssht() { ssh -t "$@" 'tmux new -As0'; }
+# Alias definitions
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
